@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.Rider2018.3/system/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2018.3/system/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_Ftec.DistribuicaoDeServicos.-1958907319.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
+    <e p="C:\RiderProjects\distribuicao_de_servicos" t="IncludeFlat">
+      <e p="1-WebServices" t="Include" />
+      <e p="2-Application" t="Include" />
+      <e p="3-Domain" t="Include" />
+      <e p="4-Infra" t="Include">
+        <e p="ExternalServices" t="Include" />
+        <e p="Repository" t="Include" />
+      </e>
+      <e p="Application" t="IncludeRecursive">
+        <e p="Adapter" t="Include">
+          <e p="LocationAdapter.cs" t="Include" />
+        </e>
+        <e p="Application.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DTO" t="Include">
+          <e p="Model.cs" t="Include" />
+        </e>
+        <e p="LocationApplication.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Domain" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Domain.csproj" t="IncludeRecursive" />
+        <e p="Entities" t="Include">
+          <e p="Model.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="ILocationRepository.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Ftec.DistribuicaoDeServicos.sln" t="IncludeFlat" />
       <e p="Ftec.DistribuicaoDeServicos.WebAPI" t="IncludeRecursive">
         <e p="App_Data" t="Include" />
         <e p="App_Start" t="Include">
@@ -53,6 +88,7 @@
               <e p="TextSample.cs" t="Include" />
             </e>
             <e p="Views" t="Include">
+              <e p="_ViewStart.cshtml" t="Include" />
               <e p="Help" t="Include">
                 <e p="Api.cshtml" t="Include" />
                 <e p="DisplayTemplates" t="Include">
@@ -78,13 +114,12 @@
                 <e p="_Layout.cshtml" t="Include" />
               </e>
               <e p="Web.config" t="Include" />
-              <e p="_ViewStart.cshtml" t="Include" />
             </e>
             <e p="XmlDocumentationProvider.cs" t="Include" />
           </e>
         </e>
+        <e p="bin" t="ExcludeRecursive" />
         <e p="Content" t="Include">
-          <e p="Site.css" t="Include" />
           <e p="bootstrap-theme.css" t="Include" />
           <e p="bootstrap-theme.css.map" t="Include" />
           <e p="bootstrap-theme.min.css" t="Include" />
@@ -93,11 +128,20 @@
           <e p="bootstrap.css.map" t="Include" />
           <e p="bootstrap.min.css" t="Include" />
           <e p="bootstrap.min.css.map" t="Include" />
+          <e p="Site.css" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
           <e p="LocationController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
+        </e>
+        <e p="favicon.ico" t="Include" />
+        <e p="fonts" t="Include">
+          <e p="glyphicons-halflings-regular.eot" t="Include" />
+          <e p="glyphicons-halflings-regular.svg" t="Include" />
+          <e p="glyphicons-halflings-regular.ttf" t="Include" />
+          <e p="glyphicons-halflings-regular.woff" t="Include" />
+          <e p="glyphicons-halflings-regular.woff2" t="Include" />
         </e>
         <e p="Ftec.DistribuicaoDeServicos.WebAPI.csproj" t="IncludeRecursive" />
         <e p="Global.asax" t="Include" />
@@ -105,6 +149,8 @@
         <e p="Models" t="Include">
           <e p="Model.cs" t="Include" />
         </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
@@ -121,33 +167,33 @@
           <e p="modernizr-2.8.3.js" t="Include" />
         </e>
         <e p="Views" t="Include">
+          <e p="_ViewStart.cshtml" t="Include" />
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
-            <e p="Error.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
+            <e p="Error.cshtml" t="Include" />
           </e>
           <e p="Web.config" t="Include" />
-          <e p="_ViewStart.cshtml" t="Include" />
         </e>
+        <e p="Web.config" t="Include" />
         <e p="Web.Debug.config" t="Include" />
         <e p="Web.Release.config" t="Include" />
-        <e p="Web.config" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Repository" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="favicon.ico" t="Include" />
-        <e p="fonts" t="Include">
-          <e p="glyphicons-halflings-regular.eot" t="Include" />
-          <e p="glyphicons-halflings-regular.svg" t="Include" />
-          <e p="glyphicons-halflings-regular.ttf" t="Include" />
-          <e p="glyphicons-halflings-regular.woff" t="Include" />
-          <e p="glyphicons-halflings-regular.woff2" t="Include" />
-        </e>
+        <e p="LocationRepository.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository.csproj" t="IncludeRecursive" />
       </e>
-      <e p="Ftec.DistribuicaoDeServicos.sln" t="IncludeFlat" />
-      <e p="packages" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\Masterhorus\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Masterhorus\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Ftec.DistribuicaoDeServicos.-318852865.00" t="ExcludeRecursive" />
   </component>
 </project>

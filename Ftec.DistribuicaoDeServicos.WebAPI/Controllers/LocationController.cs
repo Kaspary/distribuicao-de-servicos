@@ -1,57 +1,55 @@
 using System;
 using System.Configuration;
 using System.Web.Http;
-using Ftec.DistribuicaoDeServicos.WebAPI.Models;
-using Npgsql;
+using Application;
+using Domain;
+using Domain.Interfaces;
+using Repository;
+using Model = Ftec.DistribuicaoDeServicos.WebAPI.Models.Model;
 
 namespace Ftec.DistribuicaoDeServicos.WebAPI.Controllers
 {
     public class LocationController : ApiController
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["conexao"].ToString();
+        private ILocationRepository locationRepository;
+        private LocationApplication locationApplication;
 
-        //injetando a dependencia do repositorio na aplicação
-
+        public LocationController()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["conexao"].ToString();
+            locationRepository = new LocationRepository(connectionString);
+            locationApplication = new LocationApplication(locationRepository);
+        }
 
         public Guid Post(Model model)
         {
-            using (NpgsqlConnection con = new NpgsqlConnection(connectionString))
+            try
             {
-                con.Open();
-                //Inicia a transação
-
-                using (var trans = con.BeginTransaction())
-                {
-                    try
-                    {
-                        model.LocationId = Guid.NewGuid();
-                       
-                        NpgsqlCommand cmd = new NpgsqlCommand();
-                        cmd.Connection = con;
-                        cmd.Transaction = trans;
-                        
-                        cmd.CommandText = @"INSERT Into public.location (location_id,latitude,longitude,altitude,speed,accuracy,bearing,date,identificador)values(@location_id,@latitude,@longitude,@altitude,@speed,@accuracy,@bearing,@date,@identificador)";
-                        cmd.Parameters.AddWithValue("location_id", model.LocationId);
-                        cmd.Parameters.AddWithValue("latitude", model.Latitude);
-                        cmd.Parameters.AddWithValue("longitude", model.Longitude); 
-                        cmd.Parameters.AddWithValue("altitude", model.Altitude);
-                        cmd.Parameters.AddWithValue("speed", model.Speed);
-                        cmd.Parameters.AddWithValue("accuracy", model.Accuracy);
-                        cmd.Parameters.AddWithValue("bearing", model.Bearing);
-                        cmd.Parameters.AddWithValue("date", model.Data);
-                        cmd.Parameters.AddWithValue("identificador", model.Identificador);
-                        cmd.ExecuteNonQuery();
-                        trans.Commit();
-                        return model.LocationId;
-
-                    }
-                    catch (Exception exception)
-                    {
-                        trans.Rollback();
-                        throw exception;
-                    }
-                }
+                Guid id = Insert(model);
+                return id;
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        private Guid Insert(Model model)
+        {
+            ModelDTO modelDto = new ModelDTO()
+            {
+                LocationId = model.LocationId,
+                Identificador = model.Identificador,
+                Longitude = model.Longitude,
+                Latitude = model.Latitude,
+                Altitude = model.Altitude,
+                Accuracy = model.Accuracy,
+                Bearing = model.Bearing,
+                Speed = model.Speed,
+                Data = model.Data
+            };
+            return locationApplication.Insert(modelDto);
         }
     }
 }

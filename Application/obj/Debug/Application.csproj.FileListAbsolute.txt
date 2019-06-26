@@ -1,0 +1,9 @@
+C:\RiderProjects\distribuicao_de_servicos\Application\bin\Debug\Application.dll
+C:\RiderProjects\distribuicao_de_servicos\Application\bin\Debug\Application.pdb
+C:\RiderProjects\distribuicao_de_servicos\Application\bin\Debug\Domain.dll
+C:\RiderProjects\distribuicao_de_servicos\Application\bin\Debug\Domain.pdb
+C:\RiderProjects\distribuicao_de_servicos\Application\obj\Debug\Application.csprojAssemblyReference.cache
+C:\RiderProjects\distribuicao_de_servicos\Application\obj\Debug\Application.csproj.CoreCompileInputs.cache
+C:\RiderProjects\distribuicao_de_servicos\Application\obj\Debug\Application.csproj.CopyComplete
+C:\RiderProjects\distribuicao_de_servicos\Application\obj\Debug\Application.dll
+C:\RiderProjects\distribuicao_de_servicos\Application\obj\Debug\Application.pdb
